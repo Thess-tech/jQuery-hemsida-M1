@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery hemsida</title>
+    <link rel="stylesheet" href="../mainstylesheet.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <script 
+    src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+    </script>
+    <script>
+
+        var allisfaded = 0;
+
+        $(document).ready(function(){
+
+            $("i").click(function() { //visar och tar bort slide menyn
+                $(".nav_bar")
+                .toggleClass("nav_show")
+            });
+
+            $(".box_fade").click(function() { //tar bort bilder
+                $(this).fadeOut();
+
+                allisfaded=allisfaded+1; //hämtar in klick
+
+                if (allisfaded==7){ //räknar ner klick
+                    allisfaded=0; 
+
+                    setTimeout(function() { //när alla bilder är klickade 
+                        $(".box_popup").addClass("image_show") //visas en bild
+                        $(".gallery_button").addClass("image_show")// och en knapp visas genom att lägga till klassen image_show
+                    }, 500);
+    
+
+                    $(".gallery_button").click(function() { //knapp som tar tillbaka alla bilder efter de tagits bort
+                        $(".box_fade").fadeIn();
+                        $(".box_popup").removeClass("image_show");//tar bort klassen image_show från box_popup
+                    });
+                };
+
+            });
+
+        });
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <div class="main">
+            <div class="header">
+                <h1 class="gallery_text">Gallery</h1>
+                <button class="gallery_button">Take 'em back</button>
+                    <img class="header_image" src="https://picsum.photos/id/1037/1920/600" alt="header">
+            </div>
+            <div class="nav_bar">
+                <i class="fas fa-align-justify"></i>
+                <ul>
+                    <li class="nav_link"><a href="../index.html">Home</a></li>
+                    <li class="nav_link"><a href="../blogg/blogg.html">Story Maker</a></li>
+                    <li class="nav_link"><a href="../about/about.html">About</a></li>
+                    <li class="nav_link active"><a href="#">Gallery</a></li>
+                    <li class="nav_link"><a href="#">Showcase</a></li>
+                    <li class="nav_link"><a href="#">Projects</a></li>
+                    <li class="nav_link"><a href="#">Resume</a></li>
+                </ul>
+            </div>
+            <div class="container">
+                <div class="column">
+                    <div class="box_popup">
+                        <img src="../images/text_popup.png">
+                    </div>
+                    <div class="box1 box_fade">
+                        <div class="box_text">
+                        <p>Hide me</p>
+                        </div>
+                        <img class="box_image" src="https://picsum.photos/id/167/350/510">
+                    </div>
+                    <div class="box box_fade">
+                        <div class="box_text">
+                            <p>Hide me</p>
+                            </div>
+                        <img src="https://picsum.photos/id/190/350/250">
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="box box_fade">
+                        <div class="box_text">
+                            <p>Hide me</p>
+                            </div>
+                        <img src="https://picsum.photos/id/20/350/250">
+                    </div>
+                    <div class="box4 box_fade">
+                        <div class="box_text">
+                            <p>Hide me</p>
+                            </div>
+                        <img src="https://picsum.photos/id/204/350/510">
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="box box_fade">
+                        <div class="box_text">
+                            <p>Hide me</p>
+                            </div>
+                        <img src="https://picsum.photos/id/243/350/250">
+                    </div>
+                    <div class="box6 box_fade">
+                        <div class="box_text">
+                            <p>Hide me</p>
+                            </div>
+                        <img src="https://picsum.photos/id/27/350/510">
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="box7 box_fade">
+                        <div class="box_text">
+                            <p>Hide me</p>
+                            </div>
+                        <img src="https://picsum.photos/id/279/350/770">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

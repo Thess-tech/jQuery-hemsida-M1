@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery hemsida</title>
+    <link rel="stylesheet" href="../mainstylesheet.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <script 
+    src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+    </script>
+    <script>
+        $(document).ready(function(){
+
+            $( ".h2_slide" ).slideDown(1000, function() {
+                
+            });
+
+            $("i").click(function() {
+                $(".nav_bar")
+                .toggleClass("nav_show")
+            });
+        
+            $(".make_story").click(function() {
+
+                var ord1 = $(".ord1").val();
+                var ord2 = $(".ord2").val();
+                var ord3 = $(".ord3").val();
+                var ord4 = $(".ord4").val();
+                var ord5 = $(".ord5").val();
+                var ord6 = $(".ord6").val();
+
+                alert("Det var en gång en "+ord5+ " " +ord1+ " " + "som var ute för att "+ord3+" i korridoren. Plötsligt hördes ett väsande från skolbiblioteket och ett "+ord2+" "+"visade sig under en bokhylla!"+
+                "- Jag är det olydigaste "+ord2+" som finns, viskade det och busade med en "+ord6+" . Och eftersom en "+ord1+" alltid är väldigt påhittig av sig så gömde den sig i en bok . När biblioteket hade stängt för dagen tittade den fram. Inget "+ord2+" i sikte. Då började den att "+ord3+" i smyg");
+
+            });
+
+        });
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <div class="main">
+            <div class="header">
+                <h1 class="gallery_text">Story Maker</h1>
+                    <img class="header_image" src="https://picsum.photos/id/1055/1920/600" alt="header">
+            </div>
+            <div class="nav_bar">
+                <i class="fas fa-align-justify"></i>
+                <ul>
+                    <li class="nav_link"><a href="../index.html">Home</a></li>
+                    <li class="nav_link active"><a href="#">Story Maker</a></li>
+                    <li class="nav_link"><a href="../about/about.html">About</a></li>
+                    <li class="nav_link"><a href="../gallery/gallery.html">Gallery</a></li>
+                    <li class="nav_link"><a href="#">Showcase</a></li>
+                    <li class="nav_link"><a href="#">Projects</a></li>
+                    <li class="nav_link"><a href="#">Resume</a></li>
+                </ul>
+            </div>
+            <div class="container">
+                <div class="column">
+                    <div class="box1_3">
+                        <h2>Gör en egen saga</h2>
+                        <br>
+                        <br>
+                        <h3>Substantiv(en)</h3>
+                        <input name="input" class="ord1"/>
+                        <p>Exempel: gris, älg, uggla</p>
+                        <br>
+                        <h3>Substantiv(ett)</h3>
+                        <input name="input" class="ord2"/>
+                        <p>Exempel: träd, skåp, hus</p>
+                        <br>
+                        <h3>Verb: att göra något</h3>
+                        <input name="input" class="ord3"/>
+                        <p>Exempel: äta spaghetti, slå med en hammare, plocka bär</p>
+                        <br>
+                        <h3>Adjektiv</h3>
+                        <input name="input" class="ord5"/>
+                        <p>Exempel: ful, rund, randig</p>
+                        <br>
+                        <h3>Substantiv(en)</h3>
+                        <input name="input" class="ord6"/>
+                        <p>Exempel: filt, tandborste, servett</p>
+                        <br>
+                        <br>
+                        <br>
+                        <button class="make_story" style="font-weight: bolder; padding: 6px; background-color:rgb(88, 134, 173)">Gör en saga</button>
+                    </div>
+                    <div class="box_1"></div>
+                </div>
+                <div class="column">
+                    <div class="box_2">
+                        <h2 class="h2_slide">Vad är substantiv, adjektiv och verb?</h2>
+                        <br>
+                        <p class="h2_slide">De är ord som förklarar hur vårt språk är uppbyggt, språkets byggstenar.</p>
+                        <br>
+                        <p class="h2_slide">Skriv in egna ord i textfälten till vänster.</p> 
+                        <br>
+                        <p class="h2_slide">Klicka därefter på knappen "gör en saga".</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

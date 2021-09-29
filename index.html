@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery hemsida</title>
+    <link rel="stylesheet" href="mainstylesheet.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <script 
+    src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+    </script>
+    <script>
+
+        $(document).ready(function(){
+
+            $("i").click(function() {//visar och tar bort slide menyn
+                $(".nav_bar")
+                .toggleClass("nav_show");
+            });
+
+                $(".index_button").click(function() { //funktion som visar texten
+                  var showText = $("p"); 
+                        showText.animate({fontSize: '3em',}, "slow"); //förstorar texten
+                        $(showText).addClass("text"); //lägger till en klass som ändrar färg
+                    });
+                $(function() {
+                    setTimeout(function() {
+                        $(".header_texth1").removeClass("hidden"); //tar bort klassen "hidden" från välkomstexten som utför animationen i css. 
+                    }, 500);
+                });
+
+            });
+
+
+    </script>
+</head>
+<body>
+        <div class="main">
+            <div class="header">
+                <div class="header_texth1 hidden">
+                    <ul>
+                        <li>W</li>
+                        <li>E</li>
+                        <li>L</li>
+                        <li>C</li>
+                        <li>O</li>
+                        <li>M</li>
+                        <li>E</li>
+                    </ul>
+                </div>
+                <div class="header_texth2"><h2>Click on the button below</h2></div>
+                <button class="index_button">Ok then</button>
+                    <img class="header_image" src="https://picsum.photos/id/114/1920/600" alt="header">
+            </div>
+                    <div class="nav_bar">
+                        <i class="fas fa-align-justify"></i>
+                        <ul>
+                            <li class="nav_link active"><a href="#">Home</a></li>
+                            <li class="nav_link"><a href="blogg/blogg.html">Story Maker</a></li>
+                            <li class="nav_link"><a href="about/about.html">About</a></li>
+                            <li class="nav_link"><a href="gallery/gallery.html">Gallery</a></li>
+                            <li class="nav_link"><a href="#">Showcase</a></li>
+                            <li class="nav_link"><a href="#">Projects</a></li>
+                            <li class="nav_link"><a href="#">Resume</a></li>
+                        </ul>
+                    </div>
+                    <div class="container">
+                        <div class="column">
+                            <div class="box1_2">
+                                <p>Hej</p>
+                                <br>
+                                <p>På den här hemsidan kan ni se några funktioner och animationer med jQuery och CSS.</p>
+                                <p>Klicka vidare i menyn till vänster för att se mer</p>
+                            </div>
+                        </div>
+                    </div>
+        </div>
+</body>
+
+</html>

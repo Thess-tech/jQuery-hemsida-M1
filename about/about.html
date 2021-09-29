@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery hemsida</title>
+    <link rel="stylesheet" href="../mainstylesheet.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <script 
+    src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+    </script>
+    <script>
+        $(document).ready(function(){
+
+                $(".read_more").click(function() {   
+
+                    $(".text_slide").slideDown(1000, function(){ //texten till höger kommer fram när sidan laddas
+
+                    });
+                });
+
+                $("i").click(function() { //toggle class som tar bort och visar slide menyn
+                $(".nav_bar")
+                .toggleClass("nav_show")
+              });
+
+                $(".box_zoom").hover(function(){
+                    $(this).children(".img_zoom").addClass('transition'); //bilden i box_zoom får klassen transition vid hover som zommar in bilden
+
+                }, function(){
+                    $(this).children(".img_zoom").removeClass('transition');//klassen transition tas bort när bilden inte hovras. 
+            });
+
+            $(".enter_gallery").click(function() {
+                window.location.href = "../gallery/gallery.html"; //en länk vidare till sidan Gallery
+            });
+
+        });
+
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <div class="main">
+            <div class="header">
+                <h1 class="gallery_text">About</h1>
+                    <img class="header_image" src="https://picsum.photos/id/109/1920/600" alt="header">
+            </div>
+            <div class="nav_bar">
+                <i class="fas fa-align-justify"></i>
+                <ul>
+                    <li class="nav_link"><a href="../index.html">Home</a></li>
+                    <li class="nav_link"><a href="../blogg/blogg.html">Story Maker</a></li>
+                    <li class="nav_link active"><a href="#">About</a></li>
+                    <li class="nav_link"><a href="../gallery/gallery.html">Gallery</a></li>
+                    <li class="nav_link"><a href="#">Showcase</a></li>
+                    <li class="nav_link"><a href="#">Projects</a></li>
+                    <li class="nav_link"><a href="#">Resume</a></li>
+                </ul>
+            </div>
+            <div class="container">
+                <div class="column_slide">
+                    <div class="box1 box_zoom" style="border-radius: 50%; width: 350px; height: 350px; margin: 10px; ">
+                        <img class="img_zoom" src="https://picsum.photos/id/1011/350/350" style="border-radius: 50%;">
+                    </div>
+                    <div class="box_" style="width: 350px; height: 400px; margin: 10px;">
+                        <p style="color: white;">Lorem ipsum dolor sit amet consectetur adipisicing elit.<p>
+                            <br>
+                                <p style="color: white; padding: 5px;">Ea laboriosam qui ducimus nisi neque delectus? Perferendis voluptates libero tempora, officia repellendus amet itaque! Corporis animi officiis repudiandae cupiditate amet dolorem.</p>
+                                <br>
+                                <button class="read_more" style="font-weight: bolder; padding: 5px; cursor: pointer;">read more</button>
+                                <br>
+                                <br>
+                                <p class="text_slide" style="color: white; padding: 5px;">Lorem ipsum dolor sit amet consectetur, adipisicing elit. A laudantium cupiditate repellat asperiores eius officiis. Perspiciatis molestiae eum, necessitatibus ullam neque quidem iste doloribus voluptas eligendi, ipsum mollitia id ad.</p>
+                    </div>
+                </div>
+                <div class="column_slide">
+                    <div class="box box_zoom">
+                        <img class="img_zoom" src="https://picsum.photos/id/1013/350/250" style="border-radius: 2px;">
+                    </div>
+                    <div class="box4">                          
+                        <p style="color: white; padding: 5px;">Lorem ipsum dolor sit amet consectetur adipisicing elit.<p>
+                        <br>
+                            <p style="color: white; padding: 5px;">Ea laboriosam qui ducimus nisi neque delectus? Perferendis voluptates libero tempora, officia repellendus amet itaque! Corporis animi officiis repudiandae cupiditate amet dolorem.</p>     
+                            <br>
+                            <p style="color: white; padding: 5px;">Ea laboriosam qui ducimus nisi neque delectus? Perferendis voluptates libero tempora, officia repellendus amet itaque! Corporis animi officiis repudiandae cupiditate amet dolorem.</p>  
+                    </div>
+                </div>
+                <div class="column_slide">
+                    <div class="box">
+                        <p style="color: white; padding: 5px;">Ea laboriosam qui ducimus nisi neque delectus? Perferendis voluptates libero tempora, officia repellendus amet itaque! Corporis animi officiis repudiandae cupiditate amet dolorem.</p>
+                        <p style="color: white; padding: 5px;">Ea laboriosam qui ducimus nisi neque delectus? Perferendis voluptates libero tempora, officia repellendus amet itaque! Corporis animi officiis repudiandae cupiditate amet dolorem.</p>
+                    </div>
+                    <div class="box6_ box_zoom">
+                        <img class="img_zoom enter_gallery" src="https://picsum.photos/id/1019/350/510" style="border-radius: 2px; cursor: pointer;">
+                        <a class="enter" href="../gallery/gallery.html">
+                        <h3 class="gallery_text2" style="color: white;">Gallery</h3></a>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
